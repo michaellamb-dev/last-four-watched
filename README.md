@@ -1,41 +1,40 @@
-# Letterboxd Gallery Viewer [![built with Codeium](https://codeium.com/badges/main)](https://codeium.com) [![Deploy to GitHub Pages](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/deploy.yml/badge.svg)](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/deploy.yml) [![RSS Feed Update](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/download-data-and-assets.yml/badge.svg?event=schedule)](https://github.com/michaellambgelo/letterboxd-viewer/actions/workflows/download-data-and-assets.yml)
+# Last Four Watched [![built with Codeium](https://codeium.com/badges/main)](https://codeium.com) [![Deploy to GitHub Pages](https://github.com/michaellambgelo/last-four-watched/actions/workflows/deploy.yml/badge.svg)](https://github.com/michaellambgelo/last-four-watched/actions/workflows/deploy.yml) [![RSS Feed Update](https://github.com/michaellambgelo/last-four-watched/actions/workflows/download-data-and-assets.yml/badge.svg?event=schedule)](https://github.com/michaellambgelo/last-four-watched/actions/workflows/download-data-and-assets.yml)
 
-A web-based gallery viewer that displays your Letterboxd movie entries in a beautiful grid layout. This project fetches your Letterboxd RSS feed and renders it as an interactive gallery with movie posters and details.
+A specialized web service that generates shareable "Last Four Watched" images from a user's Letterboxd profile. This project fetches a Letterboxd RSS feed, extracts the most recent four film entries, and creates a visually appealing image grid that can be easily shared on social media.
 
-This project is designed to be easy to customize and does not require anything to be downloaded! Once configured, the GitHub actions allow for fetching data and storing it in the remote repository, and deploying the code to GitHub Pages.
+This project is designed to be interactive and user-friendly, allowing visitors to generate Last Four Watched images for any Letterboxd username without requiring API credentials. The proof-of-concept includes a fully interactive webpage for demonstration purposes.
 
 Keep reading for more details.
 
 ## Architecture
 
-Review this [sequence diagram](/sequence-diagram.md) to understand how Letterboxd Gallery Viewer works. 
+Review this [sequence diagram](/sequence-diagram.md) to understand how Last Four Watched works. 
 
 ## Features
 
-- Fetches and displays Letterboxd RSS feed entries
-- Responsive gallery layout with movie posters
-- Lightbox view for full review content
-- Contact form with webhook integration
-- Mobile-friendly design
+- Fetches the most recent four watched films from any Letterboxd profile
+- Generates a shareable image grid of the last four watched films
+- Interactive web interface for entering Letterboxd usernames
+- High-quality film poster images in a consistent layout
+- Mobile-friendly design for on-the-go image generation
 
 ## Usage
 
-1. Update the RSS feed URL in `scripts/download_rss.py` with your Letterboxd username
-2. Run the Python script to download your feed
-3. Open index.html in a web browser to view your movie gallery
+1. Visit the web interface and enter any Letterboxd username
+2. The application will fetch the user's most recent four watched films
+3. A shareable image grid will be generated automatically
+4. Download or share the image directly to social media
 
-## Automated RSS Feed Updates
+## Development Setup
 
-This project includes a GitHub Action workflow that automatically updates your Letterboxd RSS feed data:
+This project is currently a proof-of-concept without API credentials. To set up the development environment:
 
-1. The `.github/workflows/download-data-and-assets.yml` workflow runs every 6 hours to fetch your latest Letterboxd activity
-2. It can also be triggered manually from the Actions tab in your repository
-3. When new entries are found, the workflow commits and pushes the changes automatically
+1. Clone this repository
+2. Install the required dependencies
+3. Run the local development server
+4. Access the web interface to test the image generation functionality
 
-To use this feature after forking the repository:
-1. Ensure your fork has GitHub Actions enabled
-2. Update the RSS feed URL in `scripts/download_rss.py` with your Letterboxd username
-3. The first workflow run will populate your gallery with your Letterboxd data
+The application simulates the RSS feed fetching process and demonstrates the user interface for the Last Four Watched image generator.
 
 ## Deployment
 
@@ -43,17 +42,19 @@ This project is set up for deployment on GitHub Pages. To deploy:
 
 1. Fork this repository
 2. Go to your repository settings > Secrets and variables > Actions
-3. Add a new secret named `DISCORD_WEBHOOK_URL` with your Discord webhook URL
+3. Add a new secret named `DISCORD_WEBHOOK_URL` with your Discord webhook URL (if using the contact feature)
 4. Enable GitHub Pages in your repository settings
 5. Push changes to the main branch to trigger deployment
 
-The site will be automatically deployed to `https://[your-username].github.io/letterboxd-viewer/`
+The site will be automatically deployed to `https://[your-username].github.io/last-four-watched/`
 
-## Contact
+## Future Enhancements
 
-The gallery includes a contact form that sends messages through a Discord webhook. The webhook URL is configured through GitHub Actions environment variables for security.
-
-Learn more about Discord Webhooks from [this support article](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)
+- Integration with Letterboxd API when credentials are available
+- Customizable image layouts and templates
+- Additional social sharing options
+- User accounts to save favorite profiles
+- Historical tracking of Last Four Watched changes
 
 ---
 
