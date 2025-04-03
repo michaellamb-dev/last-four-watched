@@ -1,4 +1,4 @@
-# Contributing to letterboxd-viewer
+# Contributing to [michaellambgelo/letterboxd-viewer](https://github.com/michaellambgelo/letterboxd-viewer)
 
 This repository is a fork of [michaellambgelo/letterboxd-viewer](https://github.com/michaellambgelo/letterboxd-viewer) with the goal of extending its functionality while maintaining compatibility for upstream contributions.
 
