@@ -1,4 +1,4 @@
-# Last Four Watched [![built with Codeium](https://codeium.com/badges/main)](https://codeium.com) [![Deploy to GitHub Pages](https://github.com/michaellambgelo/last-four-watched/actions/workflows/deploy.yml/badge.svg)](https://github.com/michaellambgelo/last-four-watched/actions/workflows/deploy.yml) [![RSS Feed Update](https://github.com/michaellambgelo/last-four-watched/actions/workflows/download-data-and-assets.yml/badge.svg?event=schedule)](https://github.com/michaellambgelo/last-four-watched/actions/workflows/download-data-and-assets.yml)
+# Last Four Watched [![built with Codeium](https://codeium.com/badges/main)](https://codeium.com) 
 
 A specialized web service that generates shareable "Last Four Watched" images from a user's Letterboxd profile. This project fetches a Letterboxd RSS feed, extracts the most recent four film entries, and creates a visually appealing image grid that can be easily shared on social media.
 
